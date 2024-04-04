@@ -21,22 +21,16 @@ const Modal = ({ children }) => {
   }
 
   return createPortal(
-      <dialog
-        ref={modalRef}
-        onClose={onHide}
-        className="shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-black dark:bg-opacity-95 dark:text-gray-100"
-      >
-        <span onClick={onHide}
-          className="flex justify-end cursor-pointer">
-            <Image
-              src="/xmark.svg"
-              alt="close"
-              width={30}
-              height={30} />
-          </span>
-          {children}
-      </dialog>
-    ,
+    <dialog
+      ref={modalRef}
+      onClose={onHide}
+      className="shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-gray-200 dark:bg-opacity-95 dark:text-black text-lg font-bold"
+    >
+      <span onClick={onHide} className="flex justify-end cursor-pointer">
+        <Image src="/xmark.svg" alt="close" width={30} height={30} />
+      </span>
+      {children}
+    </dialog>,
     document.getElementById("modal-root-content")
   );
 };
